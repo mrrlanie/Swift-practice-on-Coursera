@@ -79,14 +79,14 @@ func Fourth (array: [String]) -> [String : [String]]{
         if names.count < 2 {
             result.removeValue(forKey: elem)
         } else {
-            names = names.sorted { (_ s1: String, _ s2: String) -> Bool in
+            let sortedNames = names.sorted { (_ s1: String, _ s2: String) -> Bool in
                 return s1 > s2
             }
+            result.updateValue(sortedNames, forKey: elem)
         }
     }
     return result
 }
-// sorting names by reverced alphabet????
 
 checker.checkFirstFunction(function: First)
 
